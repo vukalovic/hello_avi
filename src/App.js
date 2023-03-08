@@ -3,15 +3,15 @@ import Messages from "./Messages";
 import Input from "./Input";
 import './App.css';
 
-function randomName() {
-  const imena = ['Mia', 'Lucija', 'Nika', 'Rita', 'Ema', 'Mila', 'Marta', 'Sara', 'Ana', 'Dora', 'Eva', 'Elena', 'Lana', 'Petra', 'Iva', 'Klara', 'Lara', 'Marija', 'Lea', 'Hana', 'Ena', 'Franka', 'Tena', 'Leona', 'Laura', 'Emili', 'Maša', 'Una', 'Vita', 'Lena', 'Luka', 'David', 'Jakov', 'Ivan', 'Roko', 'Petar', 'Mateo', 'Niko', 'Matej', 'Fran', 'Josip', 'Noa', 'Mihael', 'Borna', 'Toma', 'Filip', 'Leon', 'Karlo', 'Marko', 'Lovro', 'Jan', 'Ivano', 'Vito', 'Šimun', 'Teo', 'Lukas', 'Ante', 'Nikola', 'Gabriel', 'Leo'];
-  const prezimena = ['Horvat', 'Kovačević', 'Babić', 'Marić', 'Jurić', 'Novak', 'Kovačić', 'Knežević', 'Vuković', 'Marković', 'Matić', 'Petrović', 'Tomić', 'Pavlović', 'Kovač', 'Božić', 'Grgić', 'Blažević', 'Perić', 'Pavić', 'Radić', 'Šarić', 'Lovrić', 'Filipović', 'Vidović', 'Jukić', 'Bošnjak', 'Perković', 'Popović', 'Nikolić', 'Šimić', 'Barišić', 'Bašić', 'Mandić', 'Klarić', 'Živković', 'Lončar', 'Martinović', 'Barić', 'Brkić', 'Galić', 'Jurković', 'Bilić', 'Kos', 'Stanić', 'Lukić', 'Matijević', 'Matković', 'Kralj', 'Janković', 'Novosel', 'Jelić', 'Ćosić', 'Miletić', 'Jurišić', 'Ivanović', 'Katić', 'Lučić', 'Mihaljević', 'Ilić', 'Tadić', 'Posavec', 'Jerković', 'Marinović', 'Ivanković', 'Mikulić', 'Šimunović', 'Ivančić', 'Poljak', 'Jovanović', 'Herceg', 'Marjanović', 'Milić', 'Vidaković', 'Cindrić', 'Marušić', 'Vučković', 'Topić', 'Rukavina', 'Jozić', 'Delić', 'Novaković', 'Varga', 'Pavičić', 'Bogdan', 'Grubišić', 'Đurić', 'Špoljarić', 'Dujmović', 'Vukelić', 'Kolar', 'Burić', 'Štimac', 'Petković', 'Kolarić', 'Petrić', 'Brajković', 'Bačić', 'Jakšić', 'Jović', 'Ivić', 'Stanković', 'Ružić', 'Pranjić', 'Stojanović', 'Antunović', 'Mitrović', 'Lončarić', 'Ban', 'Tolić', 'Josipović', 'Pejić', 'Pintarić', 'Golubić', 'Anić', 'Prpić', 'Tokić', 'Erceg', 'Petričević', 'Budimir', 'Baričević', 'Martić', 'Starčević', 'Vlašić', 'Vrdoljak', 'Mijatović', 'Car', 'Majić', 'Šimunić', 'Horvatić', 'Mlinarić', 'Ljubičić', 'Pavlić', 'Vukić', 'Vlahović', 'Sever', 'Abramović', 'Crnković', 'Mamić', 'Grgurić', 'Ivković', 'Zorić', 'Čović', 'Dragičević', 'Radoš', 'Rašić', 'Orešković', 'Sertić', 'Miličević', 'Ljubić', 'Milković', 'Medved', 'Matošević', 'Andrić', 'Milošević', 'Turković', 'Franić', 'Mišković', 'Balić', 'Šoštarić', 'Mihalić', 'Milanović', 'Jurčević', 'Galović', 'Radošević', 'Rajković', 'Balog', 'Mikić', 'Medić', 'Savić'];
+function randomImeAlgebra() {
+  const imena = ['Antonia', 'Santo', 'Bruno', 'Daniel', 'Dean', 'Valentina', 'Matej', 'Mario', 'Mladen', ];
+  const prezimena = ['Vukalović', 'Tessari', 'Rehak', 'Jursik', 'Hudek', 'Vujević', 'Nemeth', 'Maljak', 'Ivošević'];
   const ime = imena[Math.floor(Math.random() * imena.length)];
   const prezime = prezimena[Math.floor(Math.random() * prezimena.length)];
   return `${ime} ${prezime}`;
 }
 
-function randomColor() {
+function randomBoja() {
   return `#${Math.floor(Math.random() * 0xFFFFFF).toString(16)}`;
 }
 
@@ -19,8 +19,8 @@ class App extends Component {
   state = {
     messages: [],
     member: {
-      username: randomName(),
-      color: randomColor(),
+      username: randomImeAlgebra(),
+      color: randomBoja(),
     }
   }
 
@@ -56,7 +56,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>Heloo AVI</h1>
+          <h1>HELLO AVI</h1>
+          
         </div>
         <Messages
           messages={this.state.messages}
